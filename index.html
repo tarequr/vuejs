@@ -9,7 +9,19 @@
 </head>
 
 <body>
-    <div id="app"></div>
+    <div id="app">{{ message }}</div>
+
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    message: 'Hello, Vue!'
+                };
+            }
+        });
+
+        app.mount('#app');
+    </script>
 </body>
 
 </html>
