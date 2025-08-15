@@ -9,7 +9,11 @@
 </head>
 
 <body>
-    <div id="app">{{ message }}</div>
+    <div id="app">
+        <h1>{{ message }}</h1>
+
+        <button @click="clickMe">Click Me</button>
+    </div>
 
     <script>
         const app = Vue.createApp({
@@ -17,6 +21,11 @@
                 return {
                     message: 'Hello, Vue!'
                 };
+            },
+            methods: {
+                clickMe() {
+                    this.message = 'Button Clicked!';
+                }
             }
         });
 
