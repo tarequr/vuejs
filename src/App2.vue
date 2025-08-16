@@ -1,24 +1,27 @@
 <script>
-import { ref } from "vue";
-
 export default {
-  setup() {
-    const name = ref("Tarequr Rahman Sabbir");
-    const status = ref(true);
-    const tasks = ref(["Task 1", "Task 2", "Task 3", "Task 4", "Task 5"]);
-    const link = ref("https://www.google.com");
-
-    const toggleStatus = () => {
-      status.value = !status.value;
-    };
-
+  name: "App",
+  data() {
     return {
-      name,
-      status,
-      tasks,
-      link,
-      toggleStatus,
+      name: "Tarequr Rahman Sabbir",
+      status: true,
+      tasks: ["Task 1", "Task 2", "Task 3", "Task 4", "Task 5"],
+      link: "https://google.com",
     };
+  },
+
+  methods: {
+    toggleStatus() {
+      // this.status = !this.status;
+      if (this.status) {
+        this.status = false;
+      } else {
+        this.status = true;
+      }
+      // this.status = this.status ? false : true;
+      // this.status = this.status === true ? false : true;
+      // this.status = !this.status;
+    },
   },
 };
 </script>
