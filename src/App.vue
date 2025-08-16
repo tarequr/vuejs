@@ -1,25 +1,13 @@
-<script>
+<script setup>
 import { ref } from "vue";
 
-export default {
-  setup() {
-    const name = ref("Tarequr Rahman Sabbir");
-    const status = ref(true);
-    const tasks = ref(["Task 1", "Task 2", "Task 3", "Task 4", "Task 5"]);
-    const link = ref("https://www.google.com");
+const name = ref("Tarequr Rahman Sabbir");
+const status = ref(true);
+const tasks = ref(["Task 1", "Task 2", "Task 3", "Task 4", "Task 5"]);
+const link = ref("https://www.google.com");
 
-    const toggleStatus = () => {
-      status.value = !status.value;
-    };
-
-    return {
-      name,
-      status,
-      tasks,
-      link,
-      toggleStatus,
-    };
-  },
+const toggleStatus = () => {
+  status.value = !status.value;
 };
 </script>
 
