@@ -1,11 +1,21 @@
 <script setup>
-import { defineProps } from "vue";
+import { defineProps, ref, computed } from "vue";
 
 const { job } = defineProps({
   job: Object,
 });
 
 const { title, description, type, salary, location } = job;
+
+const showFullDescription = ref(false);
+
+const truncatedDescription = computed(() => {
+  if (!showFullDescription.value) {
+    description = description.substring(0, 90) + "...";
+  }
+
+  return description;
+});
 </script>
 
 <template>
