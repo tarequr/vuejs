@@ -9,12 +9,16 @@ const { title, description, type, salary, location } = job;
 
 const showFullDescription = ref(false);
 
-const truncatedDescription = computed(() => {
-  if (!showFullDescription.value) {
-    description = description.substring(0, 90) + "...";
-  }
+const toggleFullDescription = () => {
+  showFullDescription.value = !showFullDescription.value;
+};
 
-  return description;
+const truncatedDescription = computed(() => {
+  let desc = description;
+  if (!showFullDescription.value) {
+    desc = desc.substring(0, 90) + "...";
+  }
+  return desc;
 });
 </script>
 
@@ -26,7 +30,17 @@ const truncatedDescription = computed(() => {
         <h3 class="text-xl font-bold">{{ title }}</h3>
       </div>
 
-      <div class="mb-5">{{ description }}</div>
+      <div class="mb-5">
+        <div>
+          {{ truncatedDescription }}
+        </div>
+        <button
+          @click="toggleFullDescription"
+          class="text-green-500 hover:text-green-600 mb-5"
+        >
+          {{ showFullDescription ? "Show Less" : "Show More" }}
+        </button>
+      </div>
 
       <h3 class="text-green-500 mb-2">{{ salary }} / Year</h3>
 
