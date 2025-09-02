@@ -1,4 +1,24 @@
-<script setup></script>
+<script setup>
+import { reactive } from "vue";
+
+const form = reactive({
+  type: "Full-Time",
+  title: "",
+  description: "",
+  salary: "",
+  location: "",
+  company: {
+    name: "",
+    description: "",
+    contactEmail: "",
+    contactPhone: "",
+  },
+});
+
+const handleSubmit = async () => {
+  console.log(form.title);
+};
+</script>
 
 <template>
   <section class="bg-green-50">
@@ -6,7 +26,7 @@
       <div
         class="bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0"
       >
-        <form>
+        <form @submit.prevent="handleSubmit">
           <h2 class="text-3xl text-center font-semibold mb-6">Add Job</h2>
 
           <div class="mb-4">
@@ -14,6 +34,7 @@
               >Job Type</label
             >
             <select
+              v-model="form.type"
               id="type"
               name="type"
               class="border rounded w-full py-2 px-3"
@@ -32,6 +53,7 @@
             >
             <input
               type="text"
+              v-model="form.title"
               id="name"
               name="name"
               class="border rounded w-full py-2 px-3 mb-2"
@@ -45,6 +67,7 @@
             >
             <textarea
               id="description"
+              v-model="form.description"
               name="description"
               class="border rounded w-full py-2 px-3"
               rows="4"
@@ -58,6 +81,7 @@
             >
             <select
               id="salary"
+              v-model="form.salary"
               name="salary"
               class="border rounded w-full py-2 px-3"
               required
@@ -80,6 +104,7 @@
             <label class="block text-gray-700 font-bold mb-2"> Location </label>
             <input
               type="text"
+              v-model="form.location"
               id="location"
               name="location"
               class="border rounded w-full py-2 px-3 mb-2"
@@ -96,6 +121,7 @@
             >
             <input
               type="text"
+              v-model="form.company.name"
               id="company"
               name="company"
               class="border rounded w-full py-2 px-3"
@@ -111,6 +137,7 @@
             >
             <textarea
               id="company_description"
+              v-model="form.company.description"
               name="company_description"
               class="border rounded w-full py-2 px-3"
               rows="4"
@@ -126,6 +153,7 @@
             >
             <input
               type="email"
+              v-model="form.company.contactEmail"
               id="contact_email"
               name="contact_email"
               class="border rounded w-full py-2 px-3"
@@ -141,6 +169,7 @@
             >
             <input
               type="tel"
+              v-model="form.company.contactPhone"
               id="contact_phone"
               name="contact_phone"
               class="border rounded w-full py-2 px-3"
