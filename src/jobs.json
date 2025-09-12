@@ -83,34 +83,6 @@
         "contactEmail": "contact@ipsumlorem.com",
         "contactPhone": "555-555-5555"
       }
-    },
-    {
-      "id": "ad91",
-      "title": "Martena Gallegos Sabbir",
-      "type": "Full-Time",
-      "description": "Aut in officiis minu",
-      "salary": "$175K - $200K",
-      "location": "Soluta eligendi rem ",
-      "company": {
-        "name": "Stuart Finch Plc",
-        "description": "Rerum cumque aut occ",
-        "contactEmail": "giwywi@mailinator.com",
-        "contactPhone": "+1 (892) 261-2708"
-      }
-    },
-    {
-      "id": "7636",
-      "title": "Xanthus Woodard",
-      "type": "Part-Time",
-      "description": "Provident voluptas ",
-      "salary": "$50K - $60K",
-      "location": "Quis consequatur Ex",
-      "company": {
-        "name": "Daugherty Parker Inc",
-        "description": "Soluta quos atque ac",
-        "contactEmail": "peri@mailinator.com",
-        "contactPhone": "+1 (749) 604-7338"
-      }
     }
   ]
 }
